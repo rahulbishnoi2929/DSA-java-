@@ -1,0 +1,4 @@
+types of Backtracking 
+-Decision --> solution exist or not for the problem.
+-Optimization -->from a lot of solution we have to choose the best solution 
+-Enumeration --> list all the things( how many ways are there)

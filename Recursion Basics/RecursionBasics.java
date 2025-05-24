@@ -128,6 +128,73 @@ public class RecursionBasics {
 
     return halfPowerSq;
    }
+
+   
+
+
+//problem 12  tilling problem 
+    // Given a "2*n" board and tiles of sice "2*1", count the number of ways to fill the board using the tiles.
+    // The tiles can be placed either horizontally or vertically.
+
+    public static int tilingProblem(int n){ // 2*n (floor size)
+     // base case  
+        if (n == 0 || n == 1){   
+           return 1;
+        }
+        // kaam 
+      //vertical choice
+        int fnm1 = tilingProblem(n-1); // 2*(n-1) (floor size)
+      // horizontal choice
+        int fnm2 = tilingProblem(n-2); // 2*(n-2) (floor size)
+
+        int totalways = fnm1 + fnm2;
+        return totalways;
+    }
+//problem 13 --> remove duplicates from a string
+    // "appnnacollege" --> "apncolg"
+    public static void removeDuplicates(String str ,int idx , StringBuilder newStr, boolean map []){
+        if (idx == str.length()){
+            System.out.println(newStr);
+            return;
+        }
+
+        //kaam 
+        char currChar = str.charAt(idx);
+        // check if the character is already present in the map
+        if (map[currChar - 'a'] == true){
+            // do not add the character
+            removeDuplicates(str, idx+1, newStr, map);
+        }else{
+            // add the character to the map and new string
+            map[currChar - 'a'] = true;
+           
+            removeDuplicates(str, idx+1, newStr.append(currChar), map);
+        }
+    }
+
+// problem 14 --> pairing problem 
+
+    public static int friendsPairing(int n ){
+        // base case
+        if (n == 1 || n == 2){
+            return n;
+        }
+
+        //choice 
+        // 1. single
+        int fnm1 = friendsPairing(n-1); 
+
+        // 2. pair
+        int fnm2 = friendsPairing(n-2); // n-2 because 2 are already paired
+        int pairWays = (n-1) * fnm2; // n-1 because we have to choose one friend from n-1 friends
+
+        // total ways
+        return fnm1 + pairWays;
+
+        // simple way in only one line 
+        // return friendsPairing(n-1) + (n-1) * friendsPairing(n-2);
+    }
+
     public static void main(String[] args) {
         // int n= 5;
         // System.out.println(calcSum(n));
@@ -141,6 +208,17 @@ public class RecursionBasics {
 
         // System.out.println(power(2, 10));
 
-        System.out.println(optimizedPower(2, 7));
+      //  System.out.println(optimizedPower(2, 7));
+
+       // System.out.println("the number of ways = " + tilingProblem(4)); // 2*n (floor size)
+
+    //12
+        // String str = "appnnacollege";
+    
+        // removeDuplicates(str, 0, new StringBuilder(""), new boolean[26]);
+
+    //14
+    System.out.println(friendsPairing(04));
+
     }
 }
