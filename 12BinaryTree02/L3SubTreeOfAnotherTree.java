@@ -47,7 +47,6 @@ public class L3SubTreeOfAnotherTree {
 
 
         // this is the subRoot 
-
         Node subRoot = new Node (2);
         subRoot.left = new Node(4);
         subRoot.right = new Node(5);

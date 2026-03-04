@@ -18,28 +18,28 @@ public class Basics {
 
 
 // //Get Operations - O(1)
-//      int element = list.get(2);
-//      System.out.println(element);
+    //  int element = list.get(2);
+    //  System.out.println(element);
 
 
 // //Remove Element - O(n)
 
-//     list.remove(2);
-//     System.out.println(list);
+    // list.remove(2);
+    // System.out.println(list);
 
 // //Set 
-//     list.set(2,10);
-//     System.out.println(list);
+    // list.set(2,10);
+    // System.out.println(list);
 
 // //contains-O(n)
 
-//     System.out.println(list.contains(1));
-//     System.out.println(list.contains(11));
+    // System.out.println(list.contains(1));
+    // System.out.println(list.contains(11));
 
 
 
 //Size of ArrayList
-    System.out.println(list.size());
+   // System.out.println(list.size());
 
     //print the arraylist
 //     for(int i=0; i<list.size(); i++){

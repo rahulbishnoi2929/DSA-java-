@@ -150,6 +150,7 @@
         int totalways = fnm1 + fnm2;
         return totalways;
     }
+
 //problem 13 --> remove duplicates from a string
     // "appnnacollege" --> "apncolg"
     public static void removeDuplicates(String str ,int idx , StringBuilder newStr, boolean map []){
@@ -167,7 +168,6 @@
         }else{
             // add the character to the map and new string
             map[currChar - 'a'] = true;
-           
             removeDuplicates(str, idx+1, newStr.append(currChar), map);
         }
     }

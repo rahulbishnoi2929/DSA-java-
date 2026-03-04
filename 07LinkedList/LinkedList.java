@@ -188,7 +188,30 @@ public int recSearch(int key) {
     }
 
 //Delete from Nth position
-    
+    public void deleteNthfromEnd(int n){
+        int sz = 0;
+        Node temp = head;
+        while (temp!= null){
+            temp=temp.next;
+            sz++;
+        }
+
+        if(n == sz){
+            head = head.next; //remove first
+            return;
+        }
+
+        //sz-n
+        int i = 1;
+        int iToFind = sz-n;
+        Node prev= head;
+        while (i<iToFind){
+            prev = prev.next;
+            i++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
 
 
 //Remove the cycle 
