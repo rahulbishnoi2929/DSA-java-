@@ -71,14 +71,36 @@ public class L5DeleteNode{
         }
        
         //Case 3 - Both Children
-        
+        Node IS = findInorderSuccessor(root.right);
+        root.data = IS.data;
+        root.right = delete(root.right, IS.data);
     }
+    return root;
    }
 
+    public static Node findInorderSuccessor(Node root){
+        while(root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
-        int values[] = {5,3,2,7,6,1};
+        int values[] = {8, 5, 3, 1, 4, 6, 10, 11,14};
          
        Node root = null;
+
+      for(int i=0; i<values.length; i++){
+        root = insert(root, values[i]);
+      }
+
+      inOrder(root);
+      System.out.println();
+
+      root = delete(root, 1);
+      System.out.println();
+
+      inOrder(root);
 
     }
 }
